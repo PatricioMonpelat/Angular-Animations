@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
         transform: 'translateX(0)'
       })),
       state('highlighted', style({
-        backgroundcolor: 'blue',
+        'background-color': 'blue',
         transform: 'translateX(100px)'
       }))
     ])
@@ -30,10 +30,11 @@ export class AppComponent {
   }
 
   onAnimate() { 
-    alert('animate function');
+    // alert('animate function');
+    this.state == 'normal' ? this.state = 'highlighted' : this.state = 'normal'
   }
 
   onShrink() {
-    alert('shrink function')
+    // alert('shrink function')
    }
 }
