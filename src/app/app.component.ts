@@ -29,7 +29,11 @@ export class AppComponent {
     this.list.splice(this.list.indexOf(item), 1);
   }
 
-  onAnimate() { }
+  onAnimate() { 
+    alert('animate function');
+  }
 
-  onShrink() { }
+  onShrink() {
+    alert('shrink function')
+   }
 }
