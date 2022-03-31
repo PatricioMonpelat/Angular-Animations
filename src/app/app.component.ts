@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   animations: [
     trigger('divState', [
       state('normal', style({
-        'background-color':'red',
+        'background-color': 'red',
         transform: 'translateX(0)'
       })),
       state('highlighted', style({
@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
     ]),
     trigger('wildState', [
       state('normal', style({
-        'background-color':'red',
+        'background-color': 'red',
         transform: 'translateX(0) scale(1)'
       })),
       state('highlighted', style({
@@ -41,6 +41,26 @@ import { Component } from '@angular/core';
         })),
         animate(500)
       ])
+    ]),
+    trigger('list1', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 1,
+          transform: 'translateX(-100px)'
+        }),
+        animate(300)
+      ]),
+      transition('* => void', [
+        animate(300, style({
+          transform: 'translateX(100px)',
+          opacity: 0          
+        }))
+      ])
+      
     ])
   ]
 })
@@ -57,14 +77,14 @@ export class AppComponent {
     this.list.splice(this.list.indexOf(item), 1);
   }
 
-  onAnimate() { 
+  onAnimate() {
     // alert('animate function');
     this.state == 'normal' ? this.state = 'highlighted' : this.state = 'normal';
     this.wildState == 'normal' ? this.wildState = 'highlighted' : this.wildState = 'normal';
   }
 
   onShrink() {
-     // alert('shrink function')
+    // alert('shrink function')
     this.wildState = 'shrunken';
-   }
+  }
 }
