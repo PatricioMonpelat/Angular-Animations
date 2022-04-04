@@ -131,4 +131,11 @@ export class AppComponent {
     // alert('shrink function')
     this.wildState = 'shrunken';
   }
+
+  animationStarted(event){
+    console.log(event);
+  }
+  animationEnded(event){
+    console.log(event);
+  }
 }
